@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova Front-end</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f4f4f4; 
+        }
+
+        header { 
+            background: black; 
+            color: white; 
+            padding: 5px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        header h2 { margin: 10px 0; font-size: 1.2rem; }
+        nav a { color: white; margin-left: 15px; text-decoration: none; font-size: 0.8rem; font-weight: bold; }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 30px 50px;
+        }
+
+        .card {
+            background: #ebebeb;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            flex: 1;
+            height: 120px; 
+        }
+
+        .card h3 { margin: 0 0 5px 0; font-size: 1rem; }
+        .card p { margin: 0 0 15px 0; font-size: 0.75rem; color: #444; }
+
+        .card button { 
+            background: #3498db; 
+            color: white; 
+            border: none; 
+            padding: 5px 12px; 
+            border-radius: 5px; 
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
+        .form-section { 
+            text-align: center; 
+            margin-top: 10px;
+            margin-bottom: 30px; 
+        }
+
+        input { 
+            padding: 4px; 
+            border: 1px solid #999; 
+            width: 180px;
+            font-size: 0.8rem;
+        }
+
+        .btn-enviar { 
+            background: #3498db; 
+            color: white; 
+            border: none; 
+            padding: 10px 10px; 
+            border-radius: 5px; 
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .footer-barra { 
+            background: black; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            font-size: 0.8rem;
+            margin-top: 20px; 
+        }
+
+        .espaco-vazio {
+            height: 500px; 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Prova Front-end</h2>
+    <nav>
+        <a href="#">Home</a> <a href="#">Sobre</a> <a href="#">Contato</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h3>Card 1</h3>
+        <p>Conteúdo de exemplo para o card.</p>
+        <button onclick="alertar(1)">Clique</button>
+    </div>
+    <div class="card">
+        <h3>Card 2</h3>
+        <p>Outro conteúdo de exemplo.</p>
+        <button onclick="alertar(2)">Clique</button>
+    </div>
+    <div class="card">
+        <h3>Card 3</h3>
+        <p>Mais um exemplo de card.</p>
+        <button onclick="alertar(3)">Clique</button>
+    </div>
+</div>
+
+<div class="form-section">
+    <input type="text" id="nomeInput" placeholder="Digite seu nome">
+    <button class="btn-enviar" onclick="exibirSaudacao()">Enviar</button>
+    <div id="mensagemBoasVindas"></div>
+</div>
+
+<div class="footer-barra">
+    Professor: Heytor | Prova prática de Front-end
+</div>
+
+<div class="espaco-vazio"></div>
+
+<script>
+    function alertar(numero) {
+        alert("Você clicou no card " + numero);
+    }
+
+    function exibirSaudacao() {
+        const nome = document.getElementById("nomeInput").value;
+        const display = document.getElementById("mensagemBoasVindas");
+        if (nome.trim() !== "") {
+            display.innerText = "Olá, " + nome + "!";
+        }
+    }
+</script>
+
+</body>
+</html>
